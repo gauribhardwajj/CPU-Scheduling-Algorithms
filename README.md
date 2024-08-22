@@ -9,9 +9,6 @@ An implementation of various CPU scheduling algorithms in C++. The algorithms in
     - [Shortest Process Next (SPN)](#shortest-process-next-spn)
     - [Shortest Remaining Time (SRT)](#shortest-remaining-time-srt)
     - [Highest Response Ratio Next (HRRN)](#highest-response-ratio-next-hrrn)
-    - [Feedback (FB)](#feedback-fb)
-    - [Feedback with varying time quantum (FBV)](#feedback-with-varying-time-quantum-fbv)
-    - [Aging](#aging)
   - [Installation](#installation)
   - [Input Format](#input-format)
   - [Contributors](#contributors)
@@ -55,40 +52,6 @@ An implementation of various CPU scheduling algorithms in C++. The algorithms in
 
 - In summary, HRRN is a scheduling algorithm that prioritizes the execution of processes based on their response ratio, it's non-preemptive and it's commonly used in situations where the objective is to minimize the average waiting time for processes and burst time is not known in advance.
 
-### Feedback (FB)
-
-- Feedback is a scheduling algorithm that allocates CPU time to different processes based on their priority level. It is a multi-level priority algorithm that uses multiple priority queues, each with a different priority level.
-
-- Processes with higher priority levels are executed first, and as new processes arrive, they are added to the appropriate priority queue based on their priority level. When a process completes execution, it is moved to the next lower priority queue.
-
-- This algorithm can be beneficial in situations where the system needs to handle a mix of short and long-running processes, as well as processes with varying priority levels. By having multiple priority queues, it ensures that processes with higher priority levels are executed first, while also allowing lower-priority processes to eventually be executed.
-
-- In summary, Feedback is a scheduling algorithm that allocates CPU time based on priority levels, it uses multiple priority queues with different levels of priority, processes with higher priority levels are executed first and when process completes execution, it is moved to the next lower priority queue, it's commonly used in situations where system needs to handle a mix of short and long-running processes, as well as processes with varying priority levels.
-
-### Feedback with varying time quantum (FBV)
-- Same as [Feedback](#feedback-fb) but with varying time quantum.
-- Feedback with varying time quantum also uses multiple priority queues and assigns a different time quantum for each priority level, it allows the algorithm to be more efficient by spending more time on higher-priority processes and less time on lower-priority processes.
-
-### Aging
-
-- Xinu is an operating system developed at Purdue University. The scheduling invariant in Xinu assumes that at any
-time, the highest priority process eligible for CPU service is executing, with round-robin scheduling for processes of
-equal priority. Under this scheduling policy, the processes with the highest priority will always be executing. As a
-result, all the processes with lower priority will never get CPU time. As a result, starvation is produced in Xinu when
-we have two or more processes eligible for execution that have different priorities. For ease of discussion, we call the
-set of processes in the ready list and the current process as the eligible processes.
-
-- To overcome starvation, an aging scheduler may be used. On each rescheduling operation, a timeout for instance, the
-scheduler increases the priority of all the ready processes by a constant number. This avoids starvation as each ready
-process can be passed over by the scheduler only a finite number of times before it has the highest priority.
-
-- Each process has an initial priority that is assigned to it at process creation. Every time the scheduler is called it takes
-the following steps.
-    - The priority of the current process is set to the initial priority assigned to it.
-    - The priorities of all the ready processes (not the current process) are incremented by 1.
-    - The scheduler choses the highest priority process from among all the eligible processes.
-
-- Note that during each call to the scheduler, the complete ready list has to be traversed.
 ## Installation
 1- Clone the repository
 
