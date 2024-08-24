@@ -9,9 +9,8 @@ An implementation of various CPU scheduling algorithms in C++. The algorithms in
     - [Shortest Process Next (SPN)](#shortest-process-next-spn)
     - [Shortest Remaining Time (SRT)](#shortest-remaining-time-srt)
     - [Highest Response Ratio Next (HRRN)](#highest-response-ratio-next-hrrn)
-  - [Installation](#installation)
+  - [Output Control](#output-control)
   - [Input Format](#input-format)
-  - [Contributors](#contributors)
 
 ## Algorithms
 
@@ -74,17 +73,12 @@ introduction section and as shown in the attached testcases.
 
 - Line 3: An integer specifying the last instant to be used in your simulation and to be shown on the timeline.
 - Line 4: An integer specifying the number of processes to be simulated.
-- Line 5: Start of description of processes. Each process is to be described on a separate line. For algorithms 1 through 7, each process is described using a comma-separated list specifying:
-
+- Line 5: Start of description of processes. Each process is to be described on a separate line. For algorithms 1 through 5, each process is described using a comma-separated list specifying:
+- 
     1- String specifying a process name\
     2- Arrival Time\
     3- Service Time
-
-- **Note:** For Aging algorithm (algorithm 8), each process is described using a comma-separated list specifying:
-
-    1- String specifying a process name\
-    2- Arrival Time\
-    3- Priority
+  
 - Processes are assumed to be sorted based on the arrival time. If two processes have the same arrival time, then the one with the lower priority is assumed to arrive first.
 
 
