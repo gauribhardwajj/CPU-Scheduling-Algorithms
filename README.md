@@ -89,3 +89,9 @@ introduction section and as shown in the attached testcases.
     2- Arrival Time\
     3- Priority
 - Processes are assumed to be sorted based on the arrival time. If two processes have the same arrival time, then the one with the lower priority is assumed to arrive first.
+  
+###Output Control
+- install mingw and make then run "mingw32-make target" to create an executable named lab4
+- then redirect output to the output text file and read input from the given input file using the following command in powershell:
+- Get-Content testcases/sampleIP.txt | ./lab4 | Out-File testcases/sampleOP.txt
+
