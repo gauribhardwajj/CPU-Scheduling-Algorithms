@@ -52,16 +52,13 @@ An implementation of various CPU scheduling algorithms in C++. The algorithms in
 
 - In summary, HRRN is a scheduling algorithm that prioritizes the execution of processes based on their response ratio, it's non-preemptive and it's commonly used in situations where the objective is to minimize the average waiting time for processes and burst time is not known in advance.
 
-## Installation
-1- Clone the repository
+## Output Control
+1- Install `mingw` and `make` then run `"mingw32-make target"` to create an executable named lab4
 
-2- Install g++ compiler and make
+2- Redirect output to the output text file and read input from the given input file using the following command in powershell:
 ```bash
-sudo apt-get install g++ make
+Get-Content testcases/sampleIP.txt | ./lab4 | Out-File testcases/sampleOP.txt
 ```
-3- Compile the code using `make` command
-
-4- Run the executable file
 
 ## Input Format
 - Line 1: "trace" or "stats"
@@ -89,9 +86,5 @@ introduction section and as shown in the attached testcases.
     2- Arrival Time\
     3- Priority
 - Processes are assumed to be sorted based on the arrival time. If two processes have the same arrival time, then the one with the lower priority is assumed to arrive first.
-  
-###Output Control
-- install mingw and make then run "mingw32-make target" to create an executable named lab4
-- then redirect output to the output text file and read input from the given input file using the following command in powershell:
-- Get-Content testcases/sampleIP.txt | ./lab4 | Out-File testcases/sampleOP.txt
+
 
