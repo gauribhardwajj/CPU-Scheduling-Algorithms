@@ -54,5 +54,3 @@ introduction section and as shown in the attached testcases.
 
 ### Assumption:
   Processes are assumed to be sorted based on the arrival time. If two processes have the same arrival time, then the one with the lower priority is assumed to arrive first.
-
-
